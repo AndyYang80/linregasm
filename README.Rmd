@@ -33,7 +33,7 @@ install.packages("linregasm")
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-library(linregasm)
+#library(linregasm)
 ## basic example code
 ```
 
