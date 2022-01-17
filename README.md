@@ -71,15 +71,18 @@ install.packages("linregasm")
 
 ## Ecosystem
 
-As of January 2022, there are no other packages that we have found which
-explicitly evaluate the assumptions made by linear regression. The
-LR_assumption_test package seeks to fill in this gap and build upon
-existing python packages. This package aggregates the functions offered
-by scikit-learn, statsmodels, scipy.stats, matplotlib and more, seeking
-to build upon them for the purpose of evaluating linear regression
-models. This is intended to make it more accessible for users to access
-the functionality of the previously mentioned packages, as well as
-improve the clarity of results.
+As of January 2022, there are functions and packages which contain tools
+for linear regression evaluation such as `plot()` in base R, or
+`autoplot()` in `ggfortify`, which generate evaluation plots.
+Additionally, there are many linear regression reporting tools contained
+in packages such as `broom`, which tidies and reports linear regression
+statistics. The linregasm package seeks to build upon existing R
+packages, and to incorporate additional statistical tests that were not
+previously present. This package aggregates the functions offered by
+base R, broom, and more, seeking to build upon them for the purpose of
+evaluating linear regression models. This is intended to make it more
+accessible for users to access the functionality of the previously
+mentioned packages, as well as improve the clarity of results.
 
 ## Contributing
 
@@ -90,5 +93,5 @@ contributing to this project, you agree to abide by its terms.
 
 ## License
 
-`LR_assumption_test` was created by Yair Guterman, Hatef Rahmani, Song
-Bo Andy Yang . It is licensed under the terms of the MIT license.
+`linregasm` was created by Yair Guterman, Hatef Rahmani, Song Bo Andy
+Yang . It is licensed under the terms of the MIT license.
