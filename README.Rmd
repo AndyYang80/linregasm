@@ -15,10 +15,34 @@ knitr::opts_chunk$set(
 
 # linregasm
 
-<!-- badges: start -->
-<!-- badges: end -->
+# Package for testing linear and multiple linear regression assumptions
 
-The goal of linregasm is to ...
+
+This package is built to contain functions to be able to quickly and easily test the linearity assumptions before preforming linear regression or multiple linear regression for a specified dataset.
+
+The package contains 3 functions one for checking multicolliniarity, one for checking constant variance and one for checking normality in the residuals. The three assumptions should be satisfied to ensure the effectiveness of a linear regression model for a particular dataset and are described as follows:
+
+- **No Multicollinearity**: individual predictors within a model should not be linearly correlated to avoid unstable linear estimators
+- **Constant Variance of Residuals (homoscedasticity)**: Since data should be individually and identically distributed, the residuals should be independent of fitted values
+- **Normality of residuals**: Since the conditional expectation of the predicted value should be normal, the error terms of the resulting model should also be normally distributed
+
+Function 1: Multicolliniarity.
+
+- Takes a data set and a VIF threshold and checks if any of the calculated vif values exceed the given threshold. If so, the function will advise the user that this assumtion is violated, and vice versa.
+
+- Returns the Calculated VIF values and a statement telling the user whether or not the assumpton is violated.
+
+Function 2: Constant Variance.
+
+- Takes a data set and some sort of variability threshold and checks if the variabiliy of the residuals is contant by comparing it to the given threshold. If the threshold is exceeded the function will advise the user that this assumtion is violated, and vice versa.
+
+- Returns a plot of the fitted values vs residuals, the calculated variability value  and a statement telling the user whether or not the assumpton is violated.
+
+Function 3: Normality.
+
+- Takes a data set and a P-value threshold and preforms a shapiro wilk test for normality. If the P-value of the test does not exceed the threshold, the function will advise the user that this assumtion is violated, and vice versa.
+
+- Returns the Calculated P-value and a statement telling the user whether or not the assumpton is violated.
 
 ## Installation
 
@@ -28,27 +52,19 @@ You can install the released version of linregasm from [CRAN](https://CRAN.R-pro
 install.packages("linregasm")
 ```
 
-## Example
+## Usage
 
-This is a basic example which shows you how to solve a common problem:
+- TODO
 
-```{r example}
-#library(linregasm)
-## basic example code
-```
+## Ecosystem
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+As of January 2022, there are no other packages that we have found which explicitly evaluate the assumptions made by linear regression. The LR_assumption_test package seeks to fill in this gap and build upon existing python packages. This package aggregates the functions offered by scikit-learn, statsmodels, scipy.stats, matplotlib and more, seeking to build upon them for the purpose of evaluating linear regression models. This is intended to make it more accessible for users to access the functionality of the previously mentioned packages, as well as improve the clarity of results.
 
-```{r cars}
-summary(cars)
-```
+## Contributing
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/master/examples>.
+Authors: Yair Guterman, Hatef Rahmani, Song Bo Andy Yang  
+Interested in contributing? Check out the contributing guidelines. Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms.
 
-You can also embed plots, for example:
+## License
 
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+`LR_assumption_test` was created by Yair Guterman, Hatef Rahmani, Song Bo Andy Yang . It is licensed under the terms of the MIT license.
