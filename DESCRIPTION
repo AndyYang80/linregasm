@@ -1,12 +1,11 @@
 Package: linregasm
-Title: What the Package Does (One Line, Title Case)
+Title: Package for testing linear and multiple linear regression assumptions
 Version: 0.0.0.9000
 Authors@R: 
     person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Description: This package is built to contain functions to be able to quickly and easily test the linearity assumptions befre preforming linear regression or multiple linear regression for a specified dataset. The package contains 3 functions one for checking multicolliniarity, one for checking constant variance and one for checking normality in the residuals.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
