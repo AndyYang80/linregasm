@@ -6,11 +6,11 @@
 #' a dataframe containing spearman correlation coefficients between the
 #' absolute residuals and the fitted y values.
 #'
-#' @param X a dataframe containing predictor data
-#' @param y a dataframe containing response data
+#' @param data a dataframe containing regression data
+#' @param formula a formula in the format "y ~ x1 + x2 + ..." indicating regression variables
 #' @param threshold a float indicating rejection threshold of correlation coefficient
 #'
-#' @return a dataframe containing a correlation coefficient and p value
+#' @return a plot of predicted values vs residuals an the correlation p value
 #' @export
 #'
 #' @examples
@@ -18,5 +18,44 @@
 #' y <- tibble(c(1,2,4,4,6))
 #' homoscedasticity(X, y)
 #'
-homoscedasticity <- function(X, y, threshold=0.05) {
+
+library(tidyverse)
+
+homoscedasticity <- function(data, formula, threshold=0.05) {
+
+  if (typeof(data) != 'list'){
+    print("Error: data parameter must be a dataframe")
+    return(list(NULL, NULL))
+  }
+
+  if (typeof(formula) != 'character' || !grepl("~", formula)){
+    print("Error: formula parameter has incorrect formatting, formula must be a string in the format Y ~ x1 + x2 + ..., or Y ~ .")
+    return(list(NULL, NULL))
+  }
+
+  formula <- as.formula(formula)
+  linreg <- lm(formula, data = data)
+  linreg.resid <- resid(linreg)
+  linreg.preds <- predict(linreg)
+  plot_data <- tibble("predicted" = linreg.preds, "residuals" = linreg.resid)
+
+  resid_plot <- ggplot(plot_data, aes(x=predicted, y=residuals)) + geom_point() +
+    geom_hline(yintercept = 0, linetype="dashed", color = "red") +
+    ggtitle("Residuals vs predicted values") +
+    ylab("Residuals") +
+    xlab("Predicted")
+
+  corr_res <- round(cor.test(linreg.resid, linreg.preds, method = "pearson")$p.value,3)
+
+  print(paste0("The p value of the correlation between the predicted value and the residuals is: ", corr_res))
+
+  if(corr_res > 0.05){
+    cat("The p value of the correlation is above the rejection threshold, thus the correlation is likely not significant.
+The data is likely to be homoscedastic if the cluster of points has similar width throughout the X axis on the residuals plot.")
+  } else {
+    cat("The p value of the correlation is below the rejection threshold, thus the correlation is likely significant.
+The data is unlikely to be homoscedastic.")
+  }
+
+  return(list(resid_plot, corr_res))
 }
