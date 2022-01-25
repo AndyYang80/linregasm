@@ -19,7 +19,8 @@
 #' homoscedasticity(X, y)
 #'
 
-library(tidyverse)
+library(tibble)
+library(ggplot2)
 
 homoscedasticity <- function(data, formula, threshold=0.05) {
 
