@@ -19,28 +19,28 @@
 library(tidyverse)
 
 multicollinearity <- function(data, formula, vif_threshold = 10) {
-  
+
   if (typeof(data) != 'list'){
     stop("Error: input data must be a dataframe")
   }
-  
+
   if (typeof(formula) != 'character' || !grepl("~", formula)){
     stop("Error: formula parameter has incorrect formatting, formula must be a string in the format Y ~ x1 + x2 + ..., or Y ~ .")
   }
-  
+
   formula <- as.formula(formula)
   linreg <- lm(formula, data = data)
-  df_vif <- as_tibble(vif(linreg)) |>
-    rename(VIF = value)
-  
+  df_vif <- as_tibble(car::vif(linreg)) |>
+    dplyr::rename(VIF = value)
+
   multicollinearity_cases <- df_vif |>
     filter(VIF > vif_threshold) |>
     nrow()
-  
+
   if (multicollinearity_cases != 0){
     print("There is multicollinearity in your data. Consider removing features with high VIF")
   }
-  
+
   return (df_vif)
-  
+
 }
