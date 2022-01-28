@@ -15,9 +15,6 @@
 #'
 #' @examples
 #' library(tibble)
-#' X <- tibble(c(1,2,3,4,5))
-#' y <- tibble(c(1,2,4,4,6))
-#' homoscedasticity(X, y)
 #' data <- tibble(X = c(1,2,3,4,5), y=c(1,2,4,4,6))
 #' formula <- "y ~ X"
 #' homoscedasticity(data, formula)
