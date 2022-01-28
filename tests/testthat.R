@@ -1,0 +1,5 @@
+library(testthat)
+library(linregasm)
+library(ggplot2)
+library(tibble)
+test_check("linregasm")
