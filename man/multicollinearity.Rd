@@ -19,6 +19,7 @@ his function recieves a data frame of predictors and outputs VIF for each featur
 along with a stetement whether or not the multicollinearity assumption is violated.
 }
 \examples{
+library(tibble)
 X <- tibble(c(1,2,3,4,5))
 multicollinearity(X, 10)
 

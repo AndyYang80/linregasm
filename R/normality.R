@@ -12,7 +12,8 @@
 #' @export
 #'
 #' @examples
-#' homoscedasticity(tibble("X"=c(2,3,4), "y"=c(2,5,6)), "y ~ X")
+#' library(tibble)
+#' normality(tibble("X"=c(2,3,4), "y"=c(2,5,6)), "y ~ X")
 #'
 normality <- function(data, formula, p_threshold=0.05) {
 

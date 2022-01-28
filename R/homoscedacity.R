@@ -14,6 +14,7 @@
 #' @export
 #'
 #' @examples
+#' library(tibble)
 #' X <- tibble(c(1,2,3,4,5))
 #' y <- tibble(c(1,2,4,4,6))
 #' homoscedasticity(X, y)

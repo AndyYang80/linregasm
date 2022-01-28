@@ -22,6 +22,7 @@ and outputs the p-value from a Shapiro wilks test along with a statement
 indicating the results of the normality test
 }
 \examples{
-homoscedasticity(tibble("X"=c(2,3,4), "y"=c(2,5,6)), "y ~ X")
+library(tibble)
+normality(tibble("X"=c(2,3,4), "y"=c(2,5,6)), "y ~ X")
 
 }
