@@ -16,7 +16,9 @@
 #' formula <- "y ~ X"
 #' multicollinearity(data, formula, 10)
 
-library(tidyverse)
+library(tibble)
+library(car)
+library(dplyr)
 
 multicollinearity <- function(data, formula, vif_threshold = 10) {
 
@@ -31,7 +33,7 @@ multicollinearity <- function(data, formula, vif_threshold = 10) {
   formula <- as.formula(formula)
   linreg <- lm(formula, data = data)
   df_vif <- as_tibble(car::vif(linreg)) |>
-    dplyr::rename(VIF = value)
+    rename(VIF = value)
 
   multicollinearity_cases <- df_vif |>
     filter(VIF > vif_threshold) |>
