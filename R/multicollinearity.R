@@ -15,12 +15,11 @@
 #' data <- tibble(X = c(1,2,3,4,5))
 #' formula <- "y ~ X"
 #' multicollinearity(data, formula, 10)
-
-library(tibble)
-library(car)
-library(dplyr)
-
 multicollinearity <- function(data, formula, vif_threshold = 10) {
+
+  library(tibble)
+  library(car)
+  library(dplyr)
 
   if (typeof(data) != 'list'){
     stop("Error: input data must be a dataframe")
