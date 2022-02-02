@@ -40,11 +40,36 @@ iris_df = iris
 
 ## Test for Homoscedasticity of Residuals
 
-We can evaluate the homoscedasticity of our residuals by passing our dataframe and formula into the function `homoscedasticity`. Note that 'homoscedasticity' returns two objects, the first one is a plot of residuals vs predicted values, while the second is the p value of the correlation between residuals vs predicted values:
+We can evaluate the homoscedasticity of our residuals by passing our data and formula into the function `homoscedasticity()`. Note that 'homoscedasticity' returns two objects, the first one is a plot of residuals vs predicted values, while the second is the p value of the correlation between residuals vs predicted values:
 
 ```{r}
 
-results <- linregasm::homoscedasticity(iris_df, formula)
+hsc_results <- linregasm::homoscedasticity(iris_df, formula)
 
-results[[1]]
+hsc_results
 ```
+
+## Test for Normality of Residuals
+
+We can evaluate the normality of our residuals by passing our data and formula into the function `normality()`. Note that `normality()` returns two objects, the first one is a p-value from the Shapiro Wilk test, while the second is a string containing either the word Pass or Fail depending on the results of the test. The function will also print a summary statement.
+
+```{r}
+
+norm_results <- normality(iris_df, formula)
+
+norm_results
+
+```
+
+After applying the Shapiro Wilks test for normality of the residuals, the regression assumption of normality has passed.
+
+## Test for Multicollinearity
+
+We can evaluate the multicollinearity assumption of our data set by passing our data, formula, and the threshold for the VIF value. `multicollinearity()` takes these arguments and returns a data frame with VIF scores for each feature along with the statement advising the user if the multicollinearity assumption is violated.
+
+```{r}
+mult_results <- linregasm::multicollinearity(iris_df, formula)
+
+mult_results
+```
+In this case, since all of our VIF scores were below the threshold of 10, we can conclude that our data satisfies the multicollinearity assumption.

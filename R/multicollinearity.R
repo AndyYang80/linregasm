@@ -1,7 +1,7 @@
 #' multicollinearity
 #'
 #' This function receives aan input dat, linear regression model and vif threshold, and outputs VIF for each feature
-#'along with a statement whether or not the multicollinearity assumption is violated.
+#' along with a statement whether or not the multicollinearity assumption is violated.
 #'
 #' @param data a dataframe containing predictor data
 #' @param formula a formula in the format "y ~ x1 + x2 + ..." indicating regression variables
@@ -15,8 +15,8 @@
 #' data <- tibble(X = c(1,2,3,4,5))
 #' formula <- "y ~ X"
 #' multicollinearity(data, formula, 10)
+#'
 multicollinearity <- function(data, formula, vif_threshold = 10) {
-
   library(tibble)
   library(car)
   library(dplyr)
