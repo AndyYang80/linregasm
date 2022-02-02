@@ -1,0 +1,21 @@
+"0",""
+"0","hsc_results <- linregasm::homoscedasticity(iris_df, formula)"
+"1","[1]"
+"1"," ""The p value of the correlation between the predicted value and the residuals is: 1"""
+"1","
+"
+"1","The p value of the correlation is above the rejection threshold, thus the correlation is likely not significant.
+The data is likely to be homoscedastic if the cluster of points has similar width throughout the X axis on the residuals plot."
+"0","hsc_results"
+"1","[[1]]
+"
+"1","
+"
+"1","[[2]]
+"
+"1","[1]"
+"1"," 1"
+"1","
+"
+"1","
+"

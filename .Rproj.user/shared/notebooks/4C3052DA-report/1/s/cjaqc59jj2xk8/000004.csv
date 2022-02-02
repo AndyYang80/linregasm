@@ -1,0 +1,2 @@
+"0","feature_desc_data <- read.csv('data/feature_descriptions.csv')"
+"0","knitr::kable(data.frame(feature_desc_data), caption = ""Table 3.1 - Feature descriptions"")"

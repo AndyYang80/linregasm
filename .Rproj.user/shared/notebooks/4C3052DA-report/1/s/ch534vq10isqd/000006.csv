@@ -1,0 +1,2 @@
+"0","coef_data_neg <- read.csv('data/negative_coefficients_ridge.csv')"
+"0","knitr::kable(data.frame(coef_data_neg), caption = ""Table 4.2.2 - Top 10 negative predictors of salary"")"

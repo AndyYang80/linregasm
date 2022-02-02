@@ -1,0 +1,83 @@
+<table>
+<caption>Table 3.2 - Preprocessing operations performed on features</caption>
+<colgroup>
+<col width="41%" />
+<col width="58%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">ï..Feature</th>
+<th align="left">Preprocessing.Technique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">additional_context_on_income</td>
+<td align="left">Dropped</td>
+</tr>
+<tr class="even">
+<td align="left">additional_context_on_job_title</td>
+<td align="left">Dropped</td>
+</tr>
+<tr class="odd">
+<td align="left">city</td>
+<td align="left">One-hot encoded</td>
+</tr>
+<tr class="even">
+<td align="left">country</td>
+<td align="left">Filtered for instances of “USA” or similar terms</td>
+</tr>
+<tr class="odd">
+<td align="left">currency</td>
+<td align="left">Filtered for instances of “USD”</td>
+</tr>
+<tr class="even">
+<td align="left">currency_other</td>
+<td align="left">Dropped</td>
+</tr>
+<tr class="odd">
+<td align="left">gender</td>
+<td align="left">Dropped</td>
+</tr>
+<tr class="even">
+<td align="left">highest_level_of_education_completed</td>
+<td align="left">Ordinal encoding, missing values encoded as mode</td>
+</tr>
+<tr class="odd">
+<td align="left">how_old_are_you</td>
+<td align="left">Ordinal encoding, missing values encoded as mode</td>
+</tr>
+<tr class="even">
+<td align="left">industry</td>
+<td align="left">Bag of words encoding, missing values encoded with blank</td>
+</tr>
+<tr class="odd">
+<td align="left">job_title</td>
+<td align="left">Bag of words encoding, missing values encoded with blank</td>
+</tr>
+<tr class="even">
+<td align="left">other_monetary_comp</td>
+<td align="left">Standard scaling</td>
+</tr>
+<tr class="odd">
+<td align="left">overall_years_of_professional_experience</td>
+<td align="left">Ordinal encoding, missing values encoded as mode</td>
+</tr>
+<tr class="even">
+<td align="left">race</td>
+<td align="left">Dropped</td>
+</tr>
+<tr class="odd">
+<td align="left">state</td>
+<td align="left">One-hot encoded, missing values encoded with blank</td>
+</tr>
+<tr class="even">
+<td align="left">timestamp</td>
+<td align="left">Dropped</td>
+</tr>
+<tr class="odd">
+<td align="left">years_of_experience_in_field</td>
+<td align="left">Ordinal encoding, missing values encoded as mode</td>
+</tr>
+</tbody>
+</table>
