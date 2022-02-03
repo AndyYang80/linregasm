@@ -19,9 +19,10 @@
 #' formula <- "y ~ X"
 #' homoscedasticity(data, formula)
 #'
+#'
 homoscedasticity <- function(data, formula, threshold=0.05) {
-  library(tibble)
-  library(ggplot2)
+library(tibble)
+library(ggplot2)
 
   if (typeof(data) != 'list'){
     print("Error: data parameter must be a dataframe")
