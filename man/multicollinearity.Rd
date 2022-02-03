@@ -11,7 +11,7 @@ multicollinearity(data, formula, vif_threshold = 10)
 
 \item{formula}{a formula in the format "y ~ x1 + x2 + ..." indicating regression variables}
 
-\item{threshold}{a float indicating threshold for VIF}
+\item{vif_threshold}{a float indicating threshold for VIF}
 }
 \value{
 a dataframe containing VIF coefficients and a statement whether the assumption is violated.

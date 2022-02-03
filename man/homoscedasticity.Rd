@@ -14,7 +14,7 @@ homoscedasticity(data, formula, threshold = 0.05)
 \item{threshold}{a float indicating rejection threshold of correlation coefficient}
 }
 \value{
-a plot of predicted values vs residuals an the correlation p value
+a plot of predicted values vs residuals and the correlation p value
 }
 \description{
 This function recieves a linear regression model and outputs a

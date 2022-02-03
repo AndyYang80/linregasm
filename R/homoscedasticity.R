@@ -10,7 +10,13 @@
 #' @param formula a formula in the format "y ~ x1 + x2 + ..." indicating regression variables
 #' @param threshold a float indicating rejection threshold of correlation coefficient
 #'
-#' @return a plot of predicted values vs residuals an the correlation p value
+#'
+#' @return a plot of predicted values vs residuals and the correlation p value
+#'
+#' @import tibble
+#' @import ggplot2
+#' @importFrom stats as.formula cor.test lm predict resid shapiro.test
+#'
 #' @export
 #'
 #' @examples
@@ -21,8 +27,7 @@
 #'
 #'
 homoscedasticity <- function(data, formula, threshold=0.05) {
-library(tibble)
-library(ggplot2)
+
 
   if (typeof(data) != 'list'){
     print("Error: data parameter must be a dataframe")
@@ -33,6 +38,9 @@ library(ggplot2)
     print("Error: formula parameter has incorrect formatting, formula must be a string in the format Y ~ x1 + x2 + ..., or Y ~ .")
     return(list(NULL, NULL))
   }
+
+  predicted <- NULL
+  residuals <- NULL
 
   formula <- as.formula(formula)
   linreg <- lm(formula, data = data)
