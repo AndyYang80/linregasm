@@ -12,8 +12,8 @@
 #'
 #' @examples
 #' library(tibble)
-#' data <- tibble(X = c(1,2,3,4,5))
-#' formula <- "y ~ X"
+#' data <- tibble(X1 = c(1,2,3,4,5), X2 = c(2,5,7,8,8), y = c(1,3,5,3,7))
+#' formula <- "y ~ X1 + X2"
 #' multicollinearity(data, formula, 10)
 #'
 multicollinearity <- function(data, formula, vif_threshold = 10) {
