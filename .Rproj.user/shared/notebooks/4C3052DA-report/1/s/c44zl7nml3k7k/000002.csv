@@ -1,0 +1,2 @@
+"0","test_data <- read.csv('data/test_scores.csv')"
+"0","knitr::kable(data.frame(test_data), caption = ""Table 4.1 - Test set scores"")"

@@ -68,7 +68,23 @@ install.packages("linregasm")
 
 ## Usage
 
--   TODO
+To use linregasm to check linear regression assumptions in your own
+projects, see the following usage example.
+
+**Test for Normality** To test for normality, use the `normality()`
+function and pass in your data and linear regression formula as follows:
+
+    norm_results <- normality(data, formula)
+
+**Test for Homoscedasticity** To test for homoscedasticity, use the
+`homoscedasticity()` function as follows:
+
+    hsc_results <- linregasm::homoscedasticity(iris_df, formula)
+
+**Test for Multicollinearity** To test for homoscedasticity, use the
+`multicollinearity()` function as follows:
+
+    mult_results <- linregasm::multicollinearity(iris_df, formula)
 
 ## Ecosystem
 

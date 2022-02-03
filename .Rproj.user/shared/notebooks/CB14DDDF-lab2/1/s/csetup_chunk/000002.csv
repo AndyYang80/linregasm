@@ -1,0 +1,94 @@
+"0","knitr::opts_chunk$set(echo = TRUE)"
+"0","library(VGAM, quietly = TRUE)"
+"2","Warning:"
+"2"," package ‘VGAM’ was built under R version 4.1.2
+"
+"0","library(scales, quietly = TRUE)"
+"0","library(MASS, quietly = TRUE)"
+"0","library(lme4, quietly = TRUE)"
+"2","Warning:"
+"2"," package ‘lme4’ was built under R version 4.1.2
+"
+"0","library(lmerTest, quietly = TRUE)"
+"2","Warning:"
+"2"," package ‘lmerTest’ was built under R version 4.1.2
+"
+"2","
+Attaching package: ‘lmerTest’
+
+"
+"2","The following object is masked from ‘package:lme4’:
+
+    lmer
+
+"
+"2","The following object is masked from ‘package:stats’:
+
+    step
+
+"
+"0","library(tidyverse, quietly = TRUE)"
+"2","Registered S3 methods overwritten by 'dbplyr':
+  method         from
+  print.tbl_lazy     
+  print.tbl_sql      
+"
+"2","[30m-- [1mAttaching packages[22m ------------------------------------------------------------------------------------------------------------------ tidyverse 1.3.1 --[39m
+"
+"2","[30m[32mv[30m [34mggplot2[30m 3.3.5     [32mv[30m [34mpurrr  [30m 0.3.4
+[32mv[30m [34mtibble [30m 3.1.4     [32mv[30m [34mdplyr  [30m 1.0.7
+[32mv[30m [34mtidyr  [30m 1.1.3     [32mv[30m [34mstringr[30m 1.4.0
+[32mv[30m [34mreadr  [30m 2.0.1     [32mv[30m [34mforcats[30m 0.5.1[39m
+"
+"2","[30m-- [1mConflicts[22m --------------------------------------------------------------------------------------------------------------------- tidyverse_conflicts() --
+[31mx[30m [34mreadr[30m::[32mcol_factor()[30m masks [34mscales[30m::col_factor()
+[31mx[30m [34mpurrr[30m::[32mdiscard()[30m    masks [34mscales[30m::discard()
+[31mx[30m [34mtidyr[30m::[32mexpand()[30m     masks [34mMatrix[30m::expand()
+[31mx[30m [34mtidyr[30m::[32mfill()[30m       masks [34mVGAM[30m::fill()
+[31mx[30m [34mdplyr[30m::[32mfilter()[30m     masks [34mstats[30m::filter()
+[31mx[30m [34mdplyr[30m::[32mlag()[30m        masks [34mstats[30m::lag()
+[31mx[30m [34mtidyr[30m::[32mpack()[30m       masks [34mMatrix[30m::pack()
+[31mx[30m [34mdplyr[30m::[32mselect()[30m     masks [34mMASS[30m::select()
+[31mx[30m [34mtidyr[30m::[32munpack()[30m     masks [34mMatrix[30m::unpack()[39m
+"
+"0","library(broom, quietly = TRUE)"
+"0","library(faraway, quietly = TRUE)"
+"2","Warning:"
+"2"," package ‘faraway’ was built under R version 4.1.2
+"
+"2","
+Attaching package: ‘faraway’
+
+"
+"2","The following objects are masked from ‘package:VGAM’:
+
+    hormone, logit, pneumo, prplot
+
+"
+"0","library(digest, quietly = TRUE)"
+"0","library(testthat, quietly = TRUE)"
+"2","
+Attaching package: ‘testthat’
+
+"
+"2","The following object is masked from ‘package:dplyr’:
+
+    matches
+
+"
+"2","The following object is masked from ‘package:purrr’:
+
+    is_null
+
+"
+"2","The following objects are masked from ‘package:readr’:
+
+    edition_get, local_edition
+
+"
+"2","The following object is masked from ‘package:tidyr’:
+
+    matches
+
+"
+"0","library(cowplot)"

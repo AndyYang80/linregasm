@@ -1,0 +1,2 @@
+"0","coef_data_pos <- read.csv('data/positive_coefficients_ridge.csv')"
+"0","knitr::kable(data.frame(coef_data_pos), caption = ""Table 4.2.1 - Top 10 positive predictors of salary"")"

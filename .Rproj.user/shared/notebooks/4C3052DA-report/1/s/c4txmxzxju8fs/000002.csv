@@ -1,0 +1,2 @@
+"0","grid_rd <- read.csv('data/grid_search_ridge.csv')"
+"0","knitr::kable(data.frame(grid_rd), caption = ""Table 3.3.1 - Ridge model optimization iterations"")"
