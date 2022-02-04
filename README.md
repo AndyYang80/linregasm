@@ -59,6 +59,14 @@ Function 3: Normality.
 
 ## Installation
 
+You can install the most revent version of linregasm from github using
+the following code:
+
+``` r
+library(devtools)
+install_github("UBC-MDS/linregasm")
+```
+
 You can install the released version of linregasm from
 [CRAN](https://CRAN.R-project.org) with:
 
