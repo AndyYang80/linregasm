@@ -1,8 +1,8 @@
-test_that("homoscedasticity() only accepts dataframe data", {
+test_that("normality() only accepts dataframe data", {
   expect_error(normality("X", "y ~ X"))
 })
 
-test_that("homoscedasticity() only accepts valid formulas", {
+test_that("normality() only accepts valid formulas", {
   expect_error(normality(tibble("X"=c(2,3,4), "y"=c(2,5,6)), "y = X"))
 })
 
